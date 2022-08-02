@@ -9,15 +9,14 @@ const fetchQuote = async () => {
     const response = await fetch(url, headers = {
         'Accept': `application/json`
     });
-    let data = await response.json();
-    quote = data[0]
+    const data = await response.json();
+    const quoteData = data[0]
     console.log(quote)
-    quote.innerHTML = '"'+quote.quote+'"'
+    quote.innerHTML = '"'+quoteData.quote+'"'
     if(quote.author){
-
-        author.innerHTML = "- "+quote.author+", "+formatSeries(quote.series)
+        author.innerHTML = "- "+quoteData.author+", "+formatSeries(quoteData.series)
     }else{
-        author.innerHTML = "- "+formatSeries(quote.series)
+        author.innerHTML = "- "+formatSeries(quoteData.series)
     }
 }
 
