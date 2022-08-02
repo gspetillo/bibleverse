@@ -11,7 +11,6 @@ const fetchQuote = async () => {
     });
     const data = await response.json();
     const quoteData = data[0]
-    console.log(quote)
     quote.innerHTML = '"'+quoteData.quote+'"'
     if(quote.author){
         author.innerHTML = "- "+quoteData.author+", "+formatSeries(quoteData.series)
@@ -22,7 +21,6 @@ const fetchQuote = async () => {
 
 const formatSeries = (series) => {
     newSeriesName = series[0].toUpperCase();
-    console.log(series)
     for(let i=1; i<series.length; i++){
         if(series[i] === '_'){
             newSeriesName += ' '
