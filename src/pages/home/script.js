@@ -1,5 +1,5 @@
-const verse = document.querySelector('#verse h2');
-const author = document.querySelector('#verse h3');
+const quote = document.querySelector('#quote h2');
+const author = document.querySelector('#quote h3');
 let books = null;
 const randomBook = null;
 const randomChapter = null;
@@ -12,7 +12,7 @@ const fetchQuote = async () => {
     let data = await response.json();
     quote = data[0]
     console.log(quote)
-    verse.innerHTML = '"'+quote.quote+'"'
+    quote.innerHTML = '"'+quote.quote+'"'
     if(quote.author){
 
         author.innerHTML = "- "+quote.author+", "+formatSeries(quote.series)
